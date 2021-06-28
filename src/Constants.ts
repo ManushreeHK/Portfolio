@@ -1,0 +1,1 @@
+export const GET_SKILLS_API = "http://192.168.0.8:6039/all";
