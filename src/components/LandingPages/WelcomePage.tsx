@@ -7,6 +7,7 @@ import { getSkills, setLoading } from "../../store/actions/skillsActions";
 import { useDispatch } from "react-redux";
 import { Skills } from "../../store/type";
 import { FC } from "react";
+import { SkillsSection } from "./SkillsSections";
 
 
 interface SkillsProps {
@@ -32,6 +33,7 @@ export const WelcomePage: FC<SkillsProps> =(skills) => {
         </IntodWrap>
       </MainWrap>
       <About />
+      <SkillsSection/>
           {/* <Menu styles={styles}>
         <SidebarList>
           About

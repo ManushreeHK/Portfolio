@@ -13,8 +13,8 @@ export interface PortfolioState {
 }
 
 export interface Skills  {
-    id: number;
-    name: string;
+    SkillId: number;
+    SkillName: string;
 }
 
 export interface skillsError {

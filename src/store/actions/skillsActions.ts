@@ -5,7 +5,7 @@ import { ThunkAction } from "redux-thunk";
  export const getSkills = (): ThunkAction<void, RootState, null, SkillsAction> => {
      return async dispatch => {
          try {
-             const res = await fetch("http://192.168.0.8:6039/all");
+             const res = await fetch("https://cy3k588iaf.execute-api.us-west-2.amazonaws.com/Skills-stage/skills");
              if(!res.ok){
                  const resData: skillsError = await res.json();
                  throw new Error(resData.message);
