@@ -17,7 +17,6 @@ export class Projects extends React.Component {
 }
 
 const ProjectWrap = styled.div`
-  margin-left: 280px;
   padding: 20px;
   font-size: 30px;
   text-align: center;

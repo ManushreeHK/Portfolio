@@ -65,7 +65,6 @@ const HeaderWrap = styled.div`
 `;
 
 const WelcomeWrap = styled.div`
-margin-left: 280px;
 background: #fff;
 `
 
