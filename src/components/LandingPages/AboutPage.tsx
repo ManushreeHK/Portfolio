@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import Pic from "./AboutPicture.jpeg";
+import Pic from "./AboutPicture.jpg";
 
 export class About extends React.Component {
     render() {

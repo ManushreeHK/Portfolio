@@ -8,7 +8,7 @@ export class HomePage extends React.Component {
     <HomePageWrapper>
         <CoverPicWrapper>
          <Intro>
-            <label className="name">Hi I'm Manushree.</label>
+            <label className="name">Hi I'm Manushree. Welcome to my personal website</label>
          </Intro>
         </CoverPicWrapper>
     </HomePageWrapper>
@@ -34,10 +34,11 @@ const CoverPicWrapper = styled.div`
 `;
 
 const Intro = styled.div`
+    width: 450px;
     color: black;
-    text-align: center;
-    float: right;
-    vertical-align: middle;
+    position: fixed;
+    top: 25%;
+    left: 60%;
     .name{
         font-weight: bold;
         font-size: 50px;
