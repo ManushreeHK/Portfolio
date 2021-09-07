@@ -1,15 +1,17 @@
 import * as React from "react";
 import styled from "styled-components";
+import Pic from "./AboutPicture.jpeg";
 
 export class About extends React.Component {
     render() {
         return (
             <AboutWrap>
+                <Picture>
+                    <img src={Pic} />
+                </Picture>
+                <Paragraph>
                 <Header>
-                    <Title>About Me</Title>
-                    <SubTitle>
-                        Who Am I?
-    </SubTitle>
+                    <Title>ABOUT ME!</Title>
                 </Header>
                 <Content>
                 I am a computer grad student from SIT with CNE as my major.I love exploring new technologies and often amazed by the progress we as a human species have mad so far in the recent years.<br/><br/>
@@ -20,6 +22,7 @@ export class About extends React.Component {
                     <SubTitle>What I Do?</SubTitle>
                    <p> I have more than 3 years of experience in IT industry as fullstack developer Below are my Expertise.</p>
                 </WhatiDo>
+                </Paragraph>
             </AboutWrap>
         );
     };
@@ -28,8 +31,12 @@ export class About extends React.Component {
 
 const AboutWrap = styled.div`
 padding: 30px;
+display: flex;
 `;
 
+const Paragraph = styled.div`
+ padding: 30px;
+`
 const WhatiDo = styled.div``;
 
 const Content = styled.p`;`
@@ -47,10 +54,12 @@ const SubTitle = styled.span`
 
 const Title = styled.span`
 margin-bottom: 15px;
-display: block;
-font-size: 10px;
-text-transform: uppercase;
-color: #999999;
-font-weight: 500;
 letter-spacing: 5px;
+font-size: 42px;
+font-weight: bold;
 `;
+
+const Picture = styled.div`
+    width: 40%;
+
+`

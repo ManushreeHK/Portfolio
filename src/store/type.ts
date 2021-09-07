@@ -7,14 +7,15 @@ export const SET_ALERT = "SET_ALERT";
 
 
 export interface PortfolioState {
-    skills: Skills | null;
+    data: SkillsData[] | null;
     loading: boolean;
     error: string;
 }
 
-export interface Skills  {
+export interface SkillsData  {
     SkillId: number;
     SkillName: string;
+    SkillDescription?:string;
 }
 
 export interface skillsError {
@@ -24,7 +25,7 @@ export interface skillsError {
 
 interface GetSkillsAction {
     type: typeof GET_SKILLS;
-    payload: Skills;
+    payload: SkillsData[];
 }
 
 interface SetLoadingAction {

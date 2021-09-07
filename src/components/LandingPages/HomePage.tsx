@@ -23,6 +23,7 @@ const HomePageWrapper = styled.div`
 
 const CoverPicWrapper = styled.div`
     background:linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgb(68 117 19 / 73%)), url(${coverpic});
+    animation: hue-rotate 3s linear infinite;
     height: 100%;
     width: 100%;
     position: fixed;

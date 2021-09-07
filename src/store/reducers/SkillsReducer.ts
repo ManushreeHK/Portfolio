@@ -1,7 +1,7 @@
 import { PortfolioState,GET_SKILLS,SET_ERROR, SET_LOADING, SkillsAction } from "../type";
 
 const initialState: PortfolioState = {
-    skills: null,
+    data: [],
     loading: false,
     error: ''
 }
@@ -10,7 +10,7 @@ export default (state = initialState, action: SkillsAction): PortfolioState => {
 switch(action.type) {
     case GET_SKILLS:
         return{
-        skills: action.payload,
+        data: action.payload,
         loading:false,
         error: ''
         }

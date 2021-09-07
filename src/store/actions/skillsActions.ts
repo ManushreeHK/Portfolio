@@ -1,6 +1,6 @@
 import { ThunkAction } from "redux-thunk";
  import { RootState } from "..";
- import { GET_SKILLS, SET_ERROR, SET_LOADING, Skills, SkillsAction, skillsError } from "../type";
+ import { GET_SKILLS, SET_ERROR, SET_LOADING, SkillsData, SkillsAction, skillsError } from "../type";
 
  export const getSkills = (): ThunkAction<void, RootState, null, SkillsAction> => {
      return async dispatch => {
@@ -10,7 +10,7 @@ import { ThunkAction } from "redux-thunk";
                  const resData: skillsError = await res.json();
                  throw new Error(resData.message);
              }
-             const resData: Skills = await res.json();
+             const resData: SkillsData[] = await res.json();
              dispatch({
                  type: GET_SKILLS,
                  payload: resData

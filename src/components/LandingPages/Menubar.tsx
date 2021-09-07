@@ -18,7 +18,9 @@ export class MenuBar extends React.Component {
         <CustomLink to="/projects">
         <MenuItem>Profession</MenuItem>
         </CustomLink>
+        <CustomLink to="/hobbies">
         <MenuItem>Hobbies</MenuItem>
+        </CustomLink>
         <MenuItem>Contact</MenuItem>
         </nav>
     </MenuList>

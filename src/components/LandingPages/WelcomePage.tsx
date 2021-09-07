@@ -5,20 +5,23 @@ import dp from './bg-image.jpg';
 import { About } from "./AboutPage";
 import { getSkills, setLoading } from "../../store/actions/skillsActions";
 import { useDispatch } from "react-redux";
-import { Skills } from "../../store/type";
+import { SkillsData } from "../../store/type";
 import { FC } from "react";
 import { SkillsSection } from "./SkillsSections";
 
 
 interface SkillsProps {
-  skills: Skills | null;
+  skills: SkillsData | null;
 }
 export const WelcomePage: FC<SkillsProps> =(skills) => {
   const dispatch = useDispatch();
+  console.log("before useeffect", skills)
 
   React.useEffect(() => {
+    console.log("inside useeffect");
     dispatch(setLoading())
     dispatch(getSkills());
+    console.log("skills",skills);
   }, []);
 
   return (
