@@ -32,6 +32,9 @@ export class MenuBar extends React.Component {
 const MenubarWrapper = styled.div`
     width: 100%;
     color: white;
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
 `
 const MenuList = styled.ul`
 width: 100%;
