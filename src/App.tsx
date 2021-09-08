@@ -28,7 +28,7 @@ const App: FC = () => {
           <MenuBar />
           <MobileWrapper>
           <SideNav id="mySidenav" className={sidenavIsOpen?"sideBarShow":"sideBarHide"}>
-          <a href="javascript:void(0)" className={"closebtn"} onClick = {closeNav} >&times;</a>
+          <a className={"closebtn"} onClick = {closeNav} >&times;</a>
           <Ul>
               <nav>
               <CustomLink to="/" onClick={closeNav}>
