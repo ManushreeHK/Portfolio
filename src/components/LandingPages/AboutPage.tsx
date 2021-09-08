@@ -1,10 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
-import Pic from "./AboutPicture.jpg";
+import Pic from "./AboutImage.jpg";
 
 export class About extends React.Component {
     render() {
         return (
+            <div>
             <AboutWrap>
                 <Picture>
                     <img src={Pic} />
@@ -24,6 +25,7 @@ export class About extends React.Component {
                 </WhatiDo>
                 </Paragraph>
             </AboutWrap>
+            </div>
         );
     };
 
@@ -32,6 +34,12 @@ export class About extends React.Component {
 const AboutWrap = styled.div`
 padding: 30px;
 display: flex;
+max-width: 960px;
+margin-left: auto;
+margin-right: auto;
+@media screen and (max-width: 992px) {
+    display: block;
+}
 `;
 
 const Paragraph = styled.div`
@@ -60,6 +68,8 @@ font-weight: bold;
 `;
 
 const Picture = styled.div`
-    width: 40%;
-
+> img {
+    width: 300px;
+    height: 330px;
+}
 `

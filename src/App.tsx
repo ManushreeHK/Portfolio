@@ -13,8 +13,8 @@ const App: FC = () => {
   return (
     <Router>
     <div className="App">
-      <MenuBar/>
       <BodyWrapper>
+      <MenuBar/>
       <Switch>
       <Route path="/" exact component={HomePage} />
       <Route path="/aboutme" component={About} />
