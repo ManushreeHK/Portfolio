@@ -8,6 +8,8 @@ import { SkillsData } from "../../../store/type";
 import { useDispatch, useSelector } from "react-redux";
 import { getSkills, setLoading } from "../../../store/actions/skillsActions";
 import { RootState } from "../../../store";
+import { CoverPic, Heading } from "./Projects";
+import travelimage from "./travelimage.jpg";
 
 export const Hobbies: React.FC =() => {
   const dispatch = useDispatch();
@@ -22,8 +24,10 @@ export const Hobbies: React.FC =() => {
   return (
       <ProjectWrap>
         <Heading><p>Hi, my name is Manushree Gowtham and I'm a senior software
-            Developer. Welcome to my personal website..! Displaying below the projects i worked and skills</p></Heading>
-         <Tabs>
+            Developer. Welcome to my personal website..! Displaying below the projects i worked and skills</p>
+            <CoverPic src ={travelimage}/>
+            </Heading>
+         <Tabs selectedTabClassName="activetab" className="tabStyle">
     <TabList>
       <Tab>Photography</Tab>
       <Tab>Travelling</Tab>
@@ -42,6 +46,13 @@ export const Hobbies: React.FC =() => {
         ))
       }
     </TabPanel>
+    <TabPanel>
+    {
+        skillsdata && skillsdata.map((skill, index) => (
+            <Card key={index} skillsData={skill} background={"linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgb(68 117 19 / 73%))"} />
+        ))
+      }
+    </TabPanel>
   </Tabs>
       </ProjectWrap>
     );
@@ -51,10 +62,12 @@ const ProjectWrap = styled.div`
   padding: 20px;
   font-size: 30px;
   text-align: center;
+  .activetab {
+    border-bottom: 4px solid green;
+    color: green;
+  }
+  .tabStyle{
+    font-size: 18px;
+    font-weight: bold;
+  }
 `;
-
-const Heading =styled.div`
-  font-size: 20px;    
-  padding:30px;
-  margin:0 auto;
-`

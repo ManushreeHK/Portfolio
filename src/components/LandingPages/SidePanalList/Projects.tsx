@@ -10,6 +10,7 @@ import { getSkills, setLoading } from "../../../store/actions/skillsActions";
 import { RootState } from "../../../store";
 import { useState } from "react";
 import Modal from 'react-modal';
+import developerimage from './developerimage.jpg';
 
 
 export interface ProjectData {
@@ -38,6 +39,9 @@ export const Projects: React.FC = () => {
   console.log("skillsdata--------->", skillsdata);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [activeProjectData, setactiveProjectData] = React.useState<Partial<ProjectData>>({});
+  const [tabIndex, setTabIndex] = useState(0);
+  console.log("gettabindex",tabIndex);
+
   React.useEffect(() => {
     dispatch(setLoading());
     dispatch(getSkills());
@@ -59,13 +63,18 @@ export const Projects: React.FC = () => {
   return (
     <ProjectWrap>
       <Heading>
-        <p>
-          Hi, my name is Manushree Gowtham and I'm a senior software Developer.
-          Welcome to my personal website..! Displaying below the projects i
-          worked and skills
-        </p>
+        <Summary>
+          <h2>
+            hello!!
+            </h2>
+          <p>I'm Manushree and I'm senior software Developer.
+          Welcome to my personal website..!</p>
+          <span> Displaying below the projects i
+          worked and skills</span>
+        </Summary>
+        <CoverPic src ={developerimage}/>
       </Heading>
-      <Tabs>
+      <Tabs selectedTabClassName="activetab" className="tabStyle">
         <TabList>
           <Tab>Projects</Tab>
           <Tab>Skills</Tab>
@@ -116,20 +125,36 @@ const ProjectWrap = styled.div`
   padding: 20px;
   font-size: 30px;
   text-align: center;
-`;
-
-const Heading = styled.div`
-  font-size: 20px;
-  padding: 30px;
-  margin: 0 auto;
-`;
-const CustomTabList = styled(TabList)`
-  > li {
-    .react-tabs__tab react-tabs__tab--selected {
-      bottom-border: 2px solid blue;
-    }
+  .activetab {
+    border-bottom: 4px solid green;
+    color: green;
+  }
+  .tabStyle{
+    font-size: 18px;
+    font-weight: bold;
   }
 `;
+
+export const Heading = styled.div`
+  font-size: 20px;
+  padding: 30px;
+  display: flex;
+margin-left: auto;
+margin-right: auto;
+@media screen and (max-width: 992px) {
+  display: block;
+}
+  >p {
+    padding: 30px;
+  }
+`;
+const CustomTabList = styled(TabList)`
+`;
+const CustomTabs = styled(Tabs)`
+&.selectedTab{
+  border-bottom: 2px solid blue;
+}
+`
 const Title = styled.div`
 display: flex;  
 align-items: center;
@@ -166,5 +191,16 @@ const Duration = styled.div`
   > h2 {
     padding-right: 10px;
   }
-  >
 `
+export const CoverPic = styled.img`
+width:600px;
+height:400px;
+@media screen and (max-width: 992px) {
+  display: none;
+}
+`
+const Summary = styled.div`
+>h2{
+  font-family: 'jadyn' !important;
+}
+`;

@@ -4,7 +4,7 @@ body {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d4d2d2;
+  background-color: rgb(245 246 252 / 52%)
 }
 button {
   font-family: "Open Sans", sans-serif;

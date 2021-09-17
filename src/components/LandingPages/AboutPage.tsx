@@ -47,7 +47,7 @@ const Paragraph = styled.div`
 `
 const WhatiDo = styled.div``;
 
-const Content = styled.p`;`
+const Content = styled.p``;
 
 const Header = styled.div``;
 
