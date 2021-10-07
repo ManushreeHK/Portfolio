@@ -49,7 +49,7 @@ display: inline;
 width: auto;
 padding: 20px;
 `
-const CustomLink = styled(Link)`
+export const CustomLink = styled(Link)`
 color: white;
 text-decoration: none;
 &:hover {

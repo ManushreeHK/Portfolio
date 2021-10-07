@@ -122,6 +122,9 @@ export const Projects: React.FC = () => {
 };
 
 const ProjectWrap = styled.div`
+max-width: 960px;
+margin-left: auto;
+margin-right: auto;
   padding: 20px;
   font-size: 30px;
   text-align: center;
