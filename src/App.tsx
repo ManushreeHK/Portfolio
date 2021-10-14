@@ -8,6 +8,9 @@ import { HomePage } from "./components/LandingPages/HomePage";
 import { MenuBar } from "./components/LandingPages/Menubar";
 import styled from "styled-components";
 import { Hobbies } from "./components/LandingPages/SidePanalList/Hobbies";
+import Hamburger from "./Assets/hamburger.png";
+import Close from "./Assets/closebutton.svg";
+
 
 const App: FC = () => {
   const [sidenavIsOpen, setIsOpen] = React.useState(false);
@@ -28,7 +31,9 @@ const App: FC = () => {
           <MenuBar />
           <MobileWrapper>
           <SideNav id="mySidenav" className={sidenavIsOpen?"sideBarShow":"sideBarHide"}>
-          <a className={"closebtn"} onClick = {closeNav} >&times;</a>
+          <CloseWrap>
+          <CloseButton onClick ={closeNav} src={Close}/>
+          </CloseWrap>
           <Ul>
               <nav>
               <CustomLink to="/" onClick={closeNav}>
@@ -54,7 +59,10 @@ const App: FC = () => {
               </nav>
           </Ul>
           </SideNav>
-          <span className={sidenavIsOpen?"sideBarOpenButtonHide":"sideBarOpenButtonShow"} onClick={openNav}>&#9776;</span>
+          <TopMenu>
+          <HamburgerIcon className={sidenavIsOpen?"sideBarOpenButtonHide":"sideBarOpenButtonShow"} onClick={openNav} src={Hamburger}/>
+          <Signature>Manushree</Signature>
+          </TopMenu>
           </MobileWrapper>
           <Switch>
             <Route path="/" exact component={HomePage} />
@@ -117,14 +125,16 @@ const SideNav = styled.div`
   }
 `;
 
-const Ul = styled.ul`
+const Ul = styled.div`
   display: block;
-  text-align: left !important;
+  text-align: center;
+  padding: 20px;
 `;
 
 const ListItems = styled.li`
 list-style: none;
-padding: 10px;
+padding: 15px;
+font-weight: bold;
 `
 const CustomLink = styled(Link)`
 color: #111;;
@@ -132,6 +142,35 @@ text-decoration: none;
 &:hover {
   color: green;
 }
+`
+const HamburgerIcon = styled.img`
+width: 100%;
+z-index: 20;
+padding: 10px;
+margin-left: 10px;
+cursor: pointer;
+height:25px;
+width:25px;
+}
+`;
+
+const CloseButton = styled.img`
+height: 30px;
+width: 30px;
+`
+
+const TopMenu = styled.div``
+const Signature = styled.label`
+position: absolute;
+right: 10px;
+padding: 10px;
+font-family: "Brush Script MT",cursive;
+font-size: 1.8em;
+`;
+const CloseWrap = styled.div`
+display: flex;
+justify-content: flex-end;
+align-items: normal;
 `
 
 
