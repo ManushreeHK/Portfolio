@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const YoutubeEmbed = ({ embedId }:any) => (
+  <VidoWrap>
   <VideoResponsive>
     <IFRAME
       width="853"
@@ -14,6 +15,8 @@ const YoutubeEmbed = ({ embedId }:any) => (
       title="Embedded youtube"
     />
   </VideoResponsive>
+  <label>Money Heist</label>
+  </VidoWrap>
 );
 
 YoutubeEmbed.propTypes = {
@@ -25,8 +28,8 @@ YoutubeEmbed.propTypes = {
 const VideoResponsive = styled.div`
 overflow: hidden;
 position: relative;
-height: 300px;
-width: 300px;
+height: 350px;
+width: 250px;
 `
 const IFRAME = styled.iframe`
 left: 0;
@@ -34,5 +37,9 @@ top: 0;
 height: 100%;
 width: 100%;
 position: absolute;
+`
+const VidoWrap = styled.div`
+padding: 20px;
+display: inline-block;
 `
 export default YoutubeEmbed;

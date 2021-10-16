@@ -9,6 +9,7 @@ export class MenuBar extends React.Component {
     <MenubarWrapper>
     <MenuList>
         <nav>
+        <Signature>Manushree</Signature>
         <CustomLink to="/">
         <MenuItem>Home</MenuItem>
         </CustomLink>
@@ -21,7 +22,6 @@ export class MenuBar extends React.Component {
         <CustomLink to="/hobbies">
         <MenuItem>Hobbies</MenuItem>
         </CustomLink>
-        <MenuItem>Contact</MenuItem>
         </nav>
     </MenuList>
     </MenubarWrapper>
@@ -30,6 +30,7 @@ export class MenuBar extends React.Component {
 }
 
 const MenubarWrapper = styled.div`
+    display: flex;
     width: 100%;
     color: white;
     @media screen and (max-width: 992px) {
@@ -51,6 +52,7 @@ padding: 20px;
 `
 export const CustomLink = styled(Link)`
 color: white;
+font-weight: bold;
 text-decoration: none;
 &:hover {
   color: green;
@@ -58,3 +60,9 @@ text-decoration: none;
 `
 const Logo = styled.span`
 `
+const Signature = styled.label`
+position: absolute;
+left: 20px;
+font-family: "Brush Script MT",cursive;
+font-size: 1.8em;
+`;
