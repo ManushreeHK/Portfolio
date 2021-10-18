@@ -10,6 +10,9 @@ import styled from "styled-components";
 import { Hobbies } from "./components/LandingPages/SidePanalList/Hobbies";
 import Hamburger from "./Assets/hamburger.png";
 import Close from "./Assets/closebutton.svg";
+import facebook from "./Assets/facebook.svg";
+import instagram from "./Assets/instagram.svg";
+import linkedin from "./Assets/linkedin.svg";
 
 
 const App: FC = () => {
@@ -34,6 +37,7 @@ const App: FC = () => {
           <CloseWrap>
           <CloseButton onClick ={closeNav} src={Close}/>
           </CloseWrap>
+          <MenuWrap>
           <Ul>
               <nav>
               <CustomLink to="/" onClick={closeNav}>
@@ -58,6 +62,19 @@ const App: FC = () => {
               </CustomLink>
               </nav>
           </Ul>
+          </MenuWrap>
+          <FindMe>Find me @</FindMe>
+          <SocialMediawrap>
+              <a href="https://www.facebook.com/manu.shree.9/" target="_blank">
+        <SocialMedia src={facebook}/>
+        </a>
+        <a href="https://www.instagram.com/manu_shree_/" target="_blank">
+        <SocialMedia src={instagram}/>
+        </a>
+        <a href="https://www.linkedin.com/in/manu-shree-a351b267/" target="_blank">
+        <SocialMedia src={linkedin}/>
+        </a>
+        </SocialMediawrap>
           </SideNav>
           <TopMenu>
           <HamburgerIcon className={sidenavIsOpen?"sideBarOpenButtonHide":"sideBarOpenButtonShow"} onClick={openNav} src={Hamburger}/>
@@ -172,6 +189,22 @@ display: flex;
 justify-content: flex-end;
 align-items: normal;
 `
+const SocialMedia = styled.img`
+    height: 30px;
+    width: 30px;
+    margin-right:10px;
+`
+const SocialMediawrap = styled.div`
+display:flex;
+padding: 20px;
+`;
 
-
+const MenuWrap = styled.div`
+height: 70%;
+`
+const FindMe = styled.label`
+  font-size: 16px;
+  font-weight: bold;
+  padding:20px;
+`
 export default App;

@@ -31,7 +31,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Movie",
     genre: "Fiction",
-    rating: "",
+    rating: "8/10",
     comment: "",
   },
   {
@@ -41,7 +41,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Series",
     genre: "heist crime Drama",
-    rating: "",
+    rating: "8/10",
     comment: "",
   },
   {
@@ -51,7 +51,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Series",
     genre: "heist crime Drama",
-    rating: "",
+    rating: "7/10",
     comment: "",
   },
   {
@@ -61,7 +61,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Movie",
     genre: "Suspence Thriller",
-    rating: "",
+    rating: "8/10",
     comment: "",
   },
   {
@@ -71,7 +71,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Movie",
     genre: "Murder Mystery",
-    rating: "",
+    rating: "9/10",
     comment: "",
   },
   {
@@ -81,7 +81,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Movie",
     genre: "Romance",
-    rating: "",
+    rating: "7.5/10",
     comment: "",
   },
   {
@@ -91,7 +91,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Movie",
     genre: "Drama",
-    rating: "",
+    rating: "9/10",
     comment: "",
   },
   {
@@ -101,7 +101,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Movie",
     genre: "Romance",
-    rating: "",
+    rating: "10/10",
     comment: "",
   },
   {
@@ -111,7 +111,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Movie",
     genre: "Fantasy",
-    rating: "",
+    rating: "10/10",
     comment: "",
   },
   {
@@ -121,7 +121,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Movie",
     genre: "Drama",
-    rating: "",
+    rating: "8/10",
     comment: "",
   },
   {
@@ -131,7 +131,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Movie",
     genre: "Drama",
-    rating: "",
+    rating: "9/10",
     comment: "",
   },
   {
@@ -141,7 +141,7 @@ const EntertainmentData = [
     Category: "Entertainment",
     subcategory: "Movie",
     genre: "Romance",
-    rating: "",
+    rating: "7.5/10",
     comment: "",
   },
 ];
@@ -165,14 +165,6 @@ export const Hobbies: React.FC = () => {
     dispatch(getTravel());
     dispatch(getPhotography());
   }, [dispatch]);
-
-  function getId(url: any) {
-    const regExp =
-      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-
-    return match && match[2].length === 11 ? match[2] : null;
-  }
 
   function filtermovies(selectedOption:any) {
     console.log("selectedvaluefiltermovie",selectedOption.value);
@@ -226,7 +218,7 @@ export const Hobbies: React.FC = () => {
           <div>
           {EntertainmentDataState && 
             EntertainmentDataState.map((data, index) => (
-                <YoutubeEmbed key={index} embedId={getId(data.URL)} />
+                <YoutubeEmbed key={index} data={data} />
             ))}
           </div>
         </TabPanel>

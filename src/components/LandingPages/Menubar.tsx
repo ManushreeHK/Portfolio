@@ -2,14 +2,17 @@ import * as React from "react";
 import styled from "styled-components";
 import coverpic from './coverpic.jpg';
 import { Link } from "react-router-dom";
+import facebook from "../../Assets/facebook.svg";
+import instagram from "../../Assets/instagram.svg";
+import linkedin from "../../Assets/linkedin.svg";
 
 export class MenuBar extends React.Component {
     render() {
         return (
     <MenubarWrapper>
     <MenuList>
-        <nav>
         <Signature>Manushree</Signature>
+        <Nav>
         <CustomLink to="/">
         <MenuItem>Home</MenuItem>
         </CustomLink>
@@ -22,7 +25,18 @@ export class MenuBar extends React.Component {
         <CustomLink to="/hobbies">
         <MenuItem>Hobbies</MenuItem>
         </CustomLink>
-        </nav>
+        </Nav>
+        <SocialMediawrap>
+        <a href="https://www.facebook.com/manu.shree.9/" target="_blank">
+        <SocialMedia src={facebook}/>
+        </a>
+        <a href="https://www.instagram.com/manu_shree_/" target="_blank">
+        <SocialMedia src={instagram}/>
+        </a>
+        <a href="https://www.linkedin.com/in/manu-shree-a351b267/" target="_blank">
+        <SocialMedia src={linkedin}/>
+        </a>
+        </SocialMediawrap>
     </MenuList>
     </MenubarWrapper>
         );
@@ -38,12 +52,14 @@ const MenubarWrapper = styled.div`
     }
 `
 const MenuList = styled.ul`
+display: flex;
+justify-content: space-between;
 width: 100%;
 list-style-type: none;
 background-color: black;
 margin: 0;
-padding: 2% 0 2% 0;
 text-align: center;
+padding: 20px;
 `
 const MenuItem = styled.li`
 display: inline;
@@ -61,8 +77,20 @@ text-decoration: none;
 const Logo = styled.span`
 `
 const Signature = styled.label`
-position: absolute;
-left: 20px;
 font-family: "Brush Script MT",cursive;
 font-size: 1.8em;
 `;
+
+const SocialMedia = styled.img`
+    height: 30px;
+    width: 30px;
+    padding-right: 10px;
+`
+const SocialMediawrap = styled.div`
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+`
+const Nav = styled.nav`
+    margin-top: 6px;
+`
