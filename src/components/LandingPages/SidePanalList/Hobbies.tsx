@@ -9,7 +9,7 @@ import { SkillsData } from "../../../store/type";
 import { useDispatch, useSelector } from "react-redux";
 import { getSkills, setLoading } from "../../../store/actions/skillsActions";
 import { RootState } from "../../../store";
-import { CoverPic, Heading } from "./Projects";
+import { CoverPic, Heading, Summary } from "./Projects";
 import travelimage from "./travelimage.jpg";
 import { ImageCard } from "../../../Compo/ImageCard";
 import YoutubeEmbed from "../../../Compo/VideoEmbed";
@@ -183,11 +183,14 @@ export const Hobbies: React.FC = () => {
   return (
     <ProjectWrap>
       <Heading>
+      <Summary>
+      <h2>
+          fun fun fun!!!
+      </h2>
         <p>
-          Hi, my name is Manushree Gowtham and I'm a senior software Developer.
-          Welcome to my personal website..! Displaying below the projects i
-          worked and skills
+        This page is displaying the places i travelled and the pictures i captured. and also my favourite movies and series i watched.
         </p>
+        </Summary>
         <CoverPic src={travelimage} />
       </Heading>
       <Tabs selectedTabClassName="activetab" className="tabStyle">

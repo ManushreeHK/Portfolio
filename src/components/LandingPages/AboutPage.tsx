@@ -15,13 +15,20 @@ export class About extends React.Component {
                     <Title>ABOUT ME!</Title>
                 </Header>
                 <Content>
-                I am a computer grad student from SIT with CNE as my major.I love exploring new technologies and often amazed by the progress we as a human species have mad so far in the recent years.<br/><br/>
-                I'm a software engineer specialised in frontend and backend development for complex scalable web apps.
-                I write about software development on my blog. Want to know how I may help your project? Check out my project portfolio and online resume.
+                My name is Manushree and I am a Fullstack developer.
+                I grew up in Tumkur(India,Karnataka) and graduated with a Bachelor’s degree and Master degree in computer science engineering from SIT(Karnataka,India).
+                I've loved exploring new technologies.<br></br><br></br>
+
+                My story is pretty much like every other kid that grew up in the 90's: Saturday morning cartoons, bowl of maggie and watching favorites TV shows. I always love to explore new things in life.<br></br><br></br>
+
+                After I graduated college, I moved to Bangalore (Karnataka,India) to start my career. Since moving I’ve worked as an software developer for valuelabs, NPCI, Kaios and Standard chartered Bank.<br></br><br></br>
+
+                I currently live in Seattle,WA with my husband.
                 </Content>
                 <WhatiDo>
                     <SubTitle>What I Do?</SubTitle>
-                   <p> I have more than 3 years of experience in IT industry as fullstack developer Below are my Expertise.</p>
+                   <p> I have more than 3 years of experience in IT industry as fullstack developer and I love doing realtime projects  .</p>
+                   <p>I do travel more often and explore new places and love to capture each moment. and i am more obssessed to movies and series. you can see my activities in hobbie page.</p>
                 </WhatiDo>
                 </Paragraph>
             </AboutWrap>

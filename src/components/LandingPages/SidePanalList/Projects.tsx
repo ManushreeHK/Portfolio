@@ -67,10 +67,7 @@ export const Projects: React.FC = () => {
           <h2>
             hello!!
             </h2>
-          <p>I'm Manushree and I'm senior software Developer.
-          Welcome to my personal website..!</p>
-          <span> Displaying below the projects i
-          worked and skills</span>
+          <p>I have 3+ years of experience in IT industry as fullstack developer . This page is to explore my projects and expertise skills</p>
         </Summary>
         <CoverPic src ={developerimage}/>
       </Heading>
@@ -202,7 +199,7 @@ height:400px;
   display: none;
 }
 `
-const Summary = styled.div`
+export const Summary = styled.div`
 >h2{
   font-family: 'jadyn' !important;
 }
