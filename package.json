@@ -26,7 +26,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-select": "^5.1.0",
-    "react-table": "6.10.0",
     "react-tabs": "^3.2.2",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
@@ -61,6 +60,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.0.0",
     "@types/classnames": "2.2.11"
   },
   "proxy": "http://your-company-api-domain"
