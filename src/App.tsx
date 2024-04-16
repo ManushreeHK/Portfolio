@@ -13,6 +13,7 @@ import Close from "./Assets/closebutton.svg";
 import facebook from "./Assets/facebook.svg";
 import instagram from "./Assets/instagram.svg";
 import linkedin from "./Assets/linkedin.svg";
+import { AdminPage }  from "./components/LandingPages/Adminpage"
 
 
 const App: FC = () => {
@@ -87,6 +88,7 @@ const App: FC = () => {
             <Route path="/favorites" component={Favorites} />
             <Route path="/projects" component={Projects} />
             <Route path="/hobbies" component={Hobbies} />
+            <Route path="/admin" component={AdminPage} />
           </Switch>
         </BodyWrapper>
       </div>
