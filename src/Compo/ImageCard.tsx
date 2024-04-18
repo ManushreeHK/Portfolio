@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { ProjectData } from "../components/LandingPages/SidePanalList/Projects";
 import { TravelDetails } from "../components/LandingPages/SidePanalList/TravelDetails";
 import { SkillsData } from "../store/type";
-import { useHistory } from "react-router-dom";
 import { CustomLink } from "../components/LandingPages/Menubar";
 
 interface CardDetails {

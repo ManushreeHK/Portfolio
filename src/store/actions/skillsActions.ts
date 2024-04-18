@@ -1,6 +1,6 @@
 import { ThunkAction } from "redux-thunk";
  import { RootState } from "..";
- import { GET_SKILLS, SET_ERROR, SET_LOADING, SkillsData, SkillsAction, skillsError } from "../type";
+ import { GET_SKILLS, SET_ERROR, SET_LOADING, SkillsData, SkillsAction, SetLoadingAction, skillsError } from "../type";
 
  export const getSkills = (): ThunkAction<void, RootState, null, SkillsAction> => {
      return async dispatch => {
@@ -24,7 +24,7 @@ import { ThunkAction } from "redux-thunk";
          }  
  }
 
- export const setLoading = () : SkillsAction => {
+ export const setLoading = () : SetLoadingAction => {
      return {
          type: SET_LOADING
      }

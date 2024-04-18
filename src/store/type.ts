@@ -28,7 +28,7 @@ interface GetSkillsAction {
     payload: SkillsData[];
 }
 
-interface SetLoadingAction {
+export interface SetLoadingAction {
     type: typeof SET_LOADING;
 }
 

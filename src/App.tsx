@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { About } from "./components/LandingPages/AboutPage";
 import { Favorites } from "./components/LandingPages/SidePanalList/FavoritesPage";
 import { Projects } from "./components/LandingPages/SidePanalList/Projects";
@@ -26,7 +26,7 @@ const App: FC = () => {
   const openNav = () => {
     setIsOpen(true)
   }
-  
+
 
   return (
     <Router>
@@ -82,14 +82,14 @@ const App: FC = () => {
           <Signature>Manushree</Signature>
           </TopMenu>
           </MobileWrapper>
-          <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/aboutme" component={About} />
-            <Route path="/favorites" component={Favorites} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/hobbies" component={Hobbies} />
-            <Route path="/admin" component={AdminPage} />
-          </Switch>
+          <Routes>
+            <Route path="/" element={<HomePage/>} />
+            <Route path="/aboutme" element={<About/>} />
+            <Route path="/favorites" element={<Favorites/>} />
+            <Route path="/projects" element={<Projects/>} />
+            <Route path="/hobbies" element={<Hobbies/>} />
+            <Route path="/admin" element={<AdminPage/>} />
+          </Routes>
         </BodyWrapper>
       </div>
     </Router>
