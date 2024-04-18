@@ -1,22 +1,44 @@
-import { createStore, applyMiddleware, combineReducers   } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import {thunk} from "redux-thunk";
 import getPhotographyReducer from "./reducers/getPhotographyReducer";
 import getTravelReducer from "./reducers/getTravelReducer";
+import {configureStore} from '@reduxjs/toolkit';
+import { default as skillsSagas } from './skills/sagas';
 
-import SkillsReducer from "./reducers/SkillsReducer";
 
-const rootReducer = combineReducers({
-    skills: SkillsReducer,
+import createSagaMiddleware from 'redux-saga';
+import { all, fork } from 'redux-saga/effects';
+import getSkillsReducer from "./skills/reducers";
+
+
+const rootReducer = {
+        skills: getSkillsReducer,
     travel: getTravelReducer,
     photography: getPhotographyReducer
-});
+  };
+  
+  function* rootSaga(): Generator {
+    yield all([
+      // add sagas here
+      fork(skillsSagas),
+    ]);
+  }
 
-const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(thunk))
-);
-
-export type RootState = ReturnType<typeof rootReducer>;
-
-export default store;
+  export function initStore(preloadedState?: any) {
+    const sagaMiddleware = createSagaMiddleware();
+    const store = configureStore({
+      reducer: rootReducer,
+      middleware: (getDefaultMiddleware) => {
+        return getDefaultMiddleware({
+          serializableCheck: false,
+        }).concat(sagaMiddleware);
+      },
+      preloadedState,
+    });
+    sagaMiddleware.run(rootSaga);
+    return store;
+  }
+  
+  export const store = initStore();
+  
+  export type RootState = ReturnType<typeof store.getState>;
+  export type AppDispatch = typeof store.dispatch;
+  export default store;

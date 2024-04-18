@@ -7,7 +7,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { SkillsData } from "../../../store/type";
 import { useDispatch, useSelector } from "react-redux";
-import { getSkills, setLoading } from "../../../store/actions/skillsActions";
+import { getSkills, setLoading } from "../../../store/skills/actions";
 import { RootState } from "../../../store";
 import { CoverPic, Heading, Summary } from "./Projects";
 import travelimage from "./travelimage.jpg";

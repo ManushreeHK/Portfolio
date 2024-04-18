@@ -18,7 +18,7 @@ import { GET_TRAVELDETAILS, SET_ERROR, SET_LOADING, TravelAction, TravelData, tr
             }catch(err) {
                 dispatch({
                     type: SET_ERROR,
-                    payload: err.message
+                    payload: "error"
                 })
             }
          }  

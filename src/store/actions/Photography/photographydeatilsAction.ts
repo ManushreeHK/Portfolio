@@ -18,7 +18,7 @@ import { GET_PHOTOGRAPHYDETAILS, PhotographyAction, PhotographyData, photography
             }catch(err) {
                 dispatch({
                     type: SET_ERROR,
-                    payload: err.message
+                    payload: "error"
                 })
             }
          }  

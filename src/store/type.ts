@@ -5,12 +5,12 @@ export const SET_LOADING = "SET_LOADING";
 export const SET_ERROR = "SET_ERROR";
 export const SET_ALERT = "SET_ALERT";
 
-
 export interface PortfolioState {
     data: SkillsData[] | null;
     loading: boolean;
-    error: string;
+    error: {};
 }
+
 
 export interface SkillsData  {
     SkillId: number;
