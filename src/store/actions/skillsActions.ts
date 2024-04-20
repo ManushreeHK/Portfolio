@@ -6,11 +6,13 @@ import { ThunkAction } from "redux-thunk";
      return async dispatch => {
          try {
              const res = await fetch("https://cy3k588iaf.execute-api.us-west-2.amazonaws.com/Skills-stage/skills");
+             console.log("res",res);
              if(!res.ok){
                  const resData: skillsError = await res.json();
                  throw new Error(resData.message);
              }
              const resData: SkillsData[] = await res.json();
+             console.log("resData", resData);
              dispatch({
                  type: GET_SKILLS,
                  payload: resData

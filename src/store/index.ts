@@ -1,12 +1,10 @@
 import getPhotographyReducer from "./reducers/getPhotographyReducer";
 import getTravelReducer from "./reducers/getTravelReducer";
+import { default as getSkillsReducer } from './reducers/SkillsReducer';
 import {configureStore} from '@reduxjs/toolkit';
-import { default as skillsSagas } from './skills/sagas';
-
 
 import createSagaMiddleware from 'redux-saga';
 import { all, fork } from 'redux-saga/effects';
-import getSkillsReducer from "./skills/reducers";
 
 
 const rootReducer = {
@@ -18,7 +16,7 @@ const rootReducer = {
   function* rootSaga(): Generator {
     yield all([
       // add sagas here
-      fork(skillsSagas),
+      // fork(skillsSagas),
     ]);
   }
 

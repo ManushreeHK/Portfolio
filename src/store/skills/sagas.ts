@@ -3,6 +3,7 @@ import Axios, { AxiosResponse } from "axios";
 import { GetSkillsAction,getSkillsResponse, GET_SKILLS_SUCCESS, SET_ERROR, GET_SKILLS } from "./actions";
 
 function* getSkills(action: GetSkillsAction): Generator {
+  console.log("get skills");
   try {
     const response: AxiosResponse = (yield Axios.get(
       "https://cy3k588iaf.execute-api.us-west-2.amazonaws.com/Skills-stage/skills",
@@ -10,7 +11,9 @@ function* getSkills(action: GetSkillsAction): Generator {
         withCredentials: true,
       }
     )) as AxiosResponse;
+    console.log(response);
     const data: getSkillsResponse = response.data;
+    
     if (data) {
       yield put({
         type: GET_SKILLS_SUCCESS,

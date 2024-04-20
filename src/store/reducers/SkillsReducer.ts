@@ -7,8 +7,11 @@ const initialState: PortfolioState = {
 }
 
 export default (state = initialState, action: SkillsAction): PortfolioState => {
+    console.log("action", action)
 switch(action.type) {
+    
     case GET_SKILLS:
+        console.log("payload",action.payload)
         return{
         data: action.payload,
         loading:false,
