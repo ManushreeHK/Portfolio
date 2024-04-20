@@ -1,8 +1,7 @@
 import React, { FC } from "react";
 import "./App.css";
 import {
-  BrowserRouter as Router,
-  BrowserRouter,
+  Routes,
   Route,
   Link,
 } from "react-router-dom";
@@ -32,7 +31,7 @@ const App: FC = () => {
   };
 
   return (
-    <Router>
+    // <Router>
       <div className="App">
         <BodyWrapper>
           <MenuBar />
@@ -67,18 +66,21 @@ const App: FC = () => {
                 <a
                   href="https://www.facebook.com/manu.shree.9/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <SocialMedia src={facebook} />
                 </a>
                 <a
                   href="https://www.instagram.com/manu_shree_/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <SocialMedia src={instagram} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/manu-shree-a351b267/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <SocialMedia src={linkedin} />
                 </a>
@@ -97,17 +99,17 @@ const App: FC = () => {
               <Signature>Manushree</Signature>
             </TopMenu>
           </MobileWrapper>
-          <BrowserRouter>
-            <Route path="/" render={() => <HomePage />} />
-            <Route path="/aboutme" render={() => <About />} />
-            <Route path="/favorites" render={() => <Favorites />} />
-            <Route path="/projects" render={() => <Projects />} />
-            <Route path="/hobbies" render={() => <Hobbies />} />
-            <Route path="/admin" render={() => <AdminPage />} />
-          </BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/aboutme" element={<About />} />
+            <Route path="/favorites" element={ <Favorites />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/hobbies" element={ <Hobbies />} />
+            <Route path="/admin" element={ <AdminPage />} />
+          </Routes>
         </BodyWrapper>
       </div>
-    </Router>
+    // </Router>
   );
 };
 
